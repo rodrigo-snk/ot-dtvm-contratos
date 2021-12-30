@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="ot-dtvm-contratos">
+    <output-path>$PROJECT_DIR$/out/artifacts/ot_dtvm_contratos</output-path>
+    <root id="archive" name="ot-dtvm-contratos.jar">
+      <element id="module-output" name="ot-dtvm-contratos" />
+    </root>
+  </artifact>
+</component>
