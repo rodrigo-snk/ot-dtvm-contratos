@@ -118,8 +118,8 @@ public class Financeiro {
     public static void atualizaVencimento(BigDecimal nuFin, BigDecimal codEmp) throws MGEModelException {
         JapeSession.SessionHandle hnd = null;
         BigDecimal tipTitulo = BigDecimal.valueOf(4);
-        BigDecimal codBco = BigDecimal.ZERO;
-        BigDecimal codCtaBcoInt = BigDecimal.ZERO;
+        BigDecimal codBco;
+        BigDecimal codCtaBcoInt;
         int empresa = codEmp.intValue();
         switch (empresa) {
             case 1:  // DTVM RJ
@@ -142,6 +142,22 @@ public class Financeiro {
                     .set("CODTIPTIT", tipTitulo)
                     .set("CODBCO", codBco)
                     .set("CODCTABCOINT", codCtaBcoInt)
+                    .update();
+            // if (true) throw new MGEModelException(String.valueOf(Timestamp.valueOf(dtVenc.atTime(LocalTime.MIDNIGHT))));
+        } catch (Exception e) {
+            MGEModelException.throwMe(e);
+        } finally {
+            JapeSession.close(hnd);
+        }
+    }
+
+    public static void atualizaVencimento(BigDecimal nuFin, BigDecimal numContrato, BigDecimal tipTitulo) throws MGEModelException {
+        JapeSession.SessionHandle hnd = null;
+        try {
+            hnd = JapeSession.open();
+            JapeFactory.dao(DynamicEntityNames.FINANCEIRO)
+                    .prepareToUpdateByPK(nuFin)
+                    .set("CODTIPTIT", tipTitulo)
                     .update();
             // if (true) throw new MGEModelException(String.valueOf(Timestamp.valueOf(dtVenc.atTime(LocalTime.MIDNIGHT))));
         } catch (Exception e) {

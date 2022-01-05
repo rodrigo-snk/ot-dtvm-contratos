@@ -3,13 +3,8 @@ package br.com.sankhya.ot.dao;
 import br.com.sankhya.jape.EntityFacade;
 import br.com.sankhya.jape.dao.JdbcWrapper;
 import br.com.sankhya.jape.vo.DynamicVO;
-import br.com.sankhya.mgecomercial.model.facades.helpper.FinanceiroHelpper;
-import br.com.sankhya.mgecomercial.model.facades.helpper.ItemNotaHelpper;
-import br.com.sankhya.modelcore.comercial.ComercialUtils;
 import br.com.sankhya.modelcore.dwfdata.vo.CabecalhoNotaVO;
 import br.com.sankhya.modelcore.dwfdata.vo.ItemNotaVO;
-import br.com.sankhya.modelcore.dwfdata.vo.tgf.FinanceiraVO;
-import br.com.sankhya.modelcore.financeiro.util.FinanceiroUtils;
 import br.com.sankhya.modelcore.util.DynamicEntityNames;
 import br.com.sankhya.modelcore.util.EntityFacadeFactory;
 

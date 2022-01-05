@@ -6,7 +6,6 @@ import br.com.sankhya.extensions.actionbutton.Registro;
 import br.com.sankhya.jape.vo.DynamicVO;
 import br.com.sankhya.jape.vo.EntityVO;
 import br.com.sankhya.mgecomercial.model.facades.helpper.ItemNotaHelpper;
-import br.com.sankhya.modelcore.MGEModelException;
 import br.com.sankhya.modelcore.comercial.*;
 import br.com.sankhya.modelcore.comercial.impostos.ImpostosHelpper;
 import br.com.sankhya.modelcore.dwfdata.vo.CabecalhoNotaVO;
@@ -28,7 +27,6 @@ public class ImportaCobrancas implements AcaoRotinaJava {
 
         CabecalhoNotaVO notaVO;
 
-        int i = 0;
         for (Registro linha : linhas) {
 
             BigDecimal codImp = (BigDecimal) linha.getCampo("CODIMP");

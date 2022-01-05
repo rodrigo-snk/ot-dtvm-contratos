@@ -68,9 +68,9 @@ public class ImportaReembolso implements AcaoRotinaJava {
             centralFinanceiro.refazerFinanceiro();
 
             //Confirma a nota
-            //BarramentoRegra regra = BarramentoRegra.build(CentralFaturamento.class, "regrasConfirmacaoSilenciosa.xml", AuthenticationInfo.getCurrent());
-            //regra.setValidarSilencioso(true);
-            //ConfirmacaoNotaHelper.confirmarNota(notaVO.getNUNOTA(), regra, true);
+            /*BarramentoRegra regra = BarramentoRegra.build(CentralFaturamento.class, "regrasConfirmacaoSilenciosa.xml", AuthenticationInfo.getCurrent());
+            regra.setValidarSilencioso(true);
+            ConfirmacaoNotaHelper.confirmarNota(notaVO.getNUNOTA(), regra, true);*/
 
             //Busca financeiros desta nota
             Collection<DynamicVO> financeirosVO = Financeiro.getFinanceirosByNunota(notaVO.getNUNOTA());
